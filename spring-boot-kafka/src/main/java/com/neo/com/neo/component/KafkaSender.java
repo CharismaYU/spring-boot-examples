@@ -26,9 +26,10 @@ public class KafkaSender {
     public void send() {
         Message message = new Message();
         message.setId(System.currentTimeMillis());
-        message.setMsg(UUID.randomUUID().toString());
+        //message.setMsg(UUID.randomUUID().toString());
+        message.setMsg("123467");
         message.setSendTime(new Date());
         log.info("=========================message = {}", gson.toJson(message));
-        kafkaTemplate.send("yxn2019-11-04", gson.toJson(message));
+        kafkaTemplate.send("yyy", gson.toJson(message));
     }
 }
