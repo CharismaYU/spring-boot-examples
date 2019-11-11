@@ -10,11 +10,11 @@ import java.util.Optional;
 /**
  * @author :  yuxuenan 2019年11月09日
  */
-//@Component
+@Component
 @Slf4j
 public class KafkaConsumer {
 
-    //@KafkaListener(topics = {"yyy"})
+    @KafkaListener(topics = {"yyy"})
     public void listen(ConsumerRecord record) {
         Optional kafkaMessage = Optional.ofNullable(record.value());
         if (kafkaMessage.isPresent()) {
