@@ -1,4 +1,4 @@
-package com.neo.com.neo.component;
+package com.neo.component;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -14,7 +14,7 @@ import java.util.Optional;
 @Slf4j
 public class KafkaConsumer {
 
-    @KafkaListener(topics = {"yyy"})
+    @KafkaListener(topics = {"yyy1"})
     public void listen(ConsumerRecord record) {
         Optional kafkaMessage = Optional.ofNullable(record.value());
         if (kafkaMessage.isPresent()) {

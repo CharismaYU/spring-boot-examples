@@ -1,4 +1,4 @@
-package com.neo.com.neo.domain;
+package com.neo.domain;
 
 import lombok.Data;
 

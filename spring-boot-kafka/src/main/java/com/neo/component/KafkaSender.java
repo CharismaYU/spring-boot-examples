@@ -1,8 +1,8 @@
-package com.neo.com.neo.component;
+package com.neo.component;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.neo.com.neo.domain.Message;
+import com.neo.domain.Message;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -27,9 +27,8 @@ public class KafkaSender {
         Message message = new Message();
         message.setId(System.currentTimeMillis());
         message.setMsg(UUID.randomUUID().toString());
-        //message.setMsg("123467");
         message.setSendTime(new Date());
         log.info("=========================message = {}", gson.toJson(message));
-        kafkaTemplate.send("yyy", gson.toJson(message));
+        kafkaTemplate.send("yyy1", gson.toJson(message));
     }
 }
