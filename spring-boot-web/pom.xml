@@ -30,6 +30,8 @@
         <log4j-version>1.2.17</log4j-version>
         <fastjson-version>1.2.30</fastjson-version>
         <shiro-version>1.3.2</shiro-version>
+        <guava.version>28.1-jre</guava.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
         <commons-httpclient.version>3.1</commons-httpclient.version>
     </properties>
 
@@ -152,6 +154,12 @@
             <artifactId>shiro-spring</artifactId>
             <version>${shiro-version}</version>
         </dependency>
+        <!-- guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
         <!-- httpclient -->
         <dependency>
             <groupId>commons-httpclient</groupId>
@@ -163,6 +171,11 @@
                     <groupId>commons-codec</groupId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>${commons-collections4.version}</version>
         </dependency>
     </dependencies>
 

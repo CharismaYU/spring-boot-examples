@@ -4,7 +4,6 @@ import com.neo.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- *
  * @author yuxuenan
  */
 public interface UserRepository extends JpaRepository<User, Long> {
