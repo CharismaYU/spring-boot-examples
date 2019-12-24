@@ -4,11 +4,23 @@ package com.neo;
  * @author :  yuxuenan 2019年12月24日
  */
 public interface Constants {
+    String FILE_UPLOAD_DIC = "/opt/deploy/upload/";//上传文件的默认url前缀，根据部署设置自行修改
 
     /**
-     * Spring Bean前缀
+     * 当前登录用户
      */
+    String CURRENT_USER = "curUser";
+
+    /**
+     * 当前登录用户
+     */
+    String CURRENT_USER_ID = "curUserId";
+
+    /** Spring Bean前缀 */
     String API_BEAN_NAME_PREFIX = "api";
+
+    /**验证码的生成文本集合 */
+    String KAPTCHA_TEXT = "abcde2345678fghkynmpwx";
 
     /**
      * 登录

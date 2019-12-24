@@ -1,5 +1,6 @@
 package com.neo.interceptor;
 
+import com.neo.Constants;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,9 +17,8 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
         String uri = request.getRequestURI();
-        if (uri.startsWith("/") && null == request.getSession().getAttribute("loginUser")) {
-            request.getSession().setAttribute("errorMsg", "请重新登陆");
-            response.sendRedirect(request.getContextPath() + "/admin/login");
+        if (uri.startsWith("/") && null == request.getSession().getAttribute(Constants.CURRENT_USER)) {
+            response.sendRedirect(request.getContextPath() + "/login");
             return false;
         } else {
             request.getSession().removeAttribute("errorMsg");
