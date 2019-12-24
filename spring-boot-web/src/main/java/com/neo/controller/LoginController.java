@@ -42,6 +42,18 @@ public class LoginController {
         return "login";
     }
 
+    @GetMapping({"", "/", "/index", "/index.html"})
+    public String index(HttpServletRequest request) {
+        request.setAttribute("path", "index");
+        // request.setAttribute("categoryCount", categoryService.getTotalCategories());
+        // request.setAttribute("blogCount", blogService.getTotalBlogs());
+        //request.setAttribute("linkCount", linkService.getTotalLinks());
+        // request.setAttribute("tagCount", tagService.getTotalTags());
+        //request.setAttribute("commentCount", commentService.getTotalComments());
+        //  request.setAttribute("path", "index");
+        return "index";
+    }
+
     /**
      * 登录
      */
@@ -54,7 +66,7 @@ public class LoginController {
         String kaptchaCode = session.getAttribute("verifyCode") + "";
         if (StringUtils.isEmpty(kaptchaCode) || !verifyCode.equals(kaptchaCode)) {
             session.setAttribute("errorMsg", "验证码错误");
-            return "admin/login";
+            return "/login";
         }
         User user = userService.findByNameAndPassWord(userName, password);
         if (user != null) {
@@ -62,10 +74,10 @@ public class LoginController {
             session.setAttribute(Constants.CURRENT_USER_ID, user.getId());
             //session过期时间设置为3600秒 即一小时
             session.setMaxInactiveInterval(60 * 60 * 1);
-            return "redirect:/hello";
+            return "redirect:/index";
         } else {
             session.setAttribute("errorMsg", "登录失败");
-            return "login";
+            return "/login";
         }
     }
 
