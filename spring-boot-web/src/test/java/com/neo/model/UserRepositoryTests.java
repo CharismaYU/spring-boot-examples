@@ -22,7 +22,7 @@ public class UserRepositoryTests {
 
 	@Test
 	public void test() throws Exception {
-		Date date = new Date();
+		/*Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG);        
 		String formattedDate = dateFormat.format(date);
 		
@@ -32,7 +32,9 @@ public class UserRepositoryTests {
 
 //		Assert.assertEquals(9, userRepository.findAll().size());
 		Assert.assertEquals("bb2", userRepository.findByUserNameOrEmail("bb", "xxx126.com").getNickName());
-		userRepository.delete(userRepository.findByUserName("aa"));
+		userRepository.delete(userRepository.findByUserName("aa"));*/
+		User aa = userRepository.findByUserName("aa");
+		System.out.println(aa);
 	}
 
 }
