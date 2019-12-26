@@ -3,20 +3,20 @@
 <head th:fragment="header-fragment">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>my personal blog | 后台管理系统</title>
+    <title>my personal | 后台管理系统</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
-    <link rel="shortcut icon" th:href="@{/admin/dist/img/favicon.png}"/>
-    <link rel="stylesheet" th:href="@{/admin/dist/css/font-awesome.min.css}">
+    <link rel="shortcut icon" th:href="@{/dist/img/favicon.png}"/>
+    <link rel="stylesheet" th:href="@{/dist/css/font-awesome.min.css}">
     <!-- Ionicons -->
-    <link rel="stylesheet" th:href="@{/admin/dist/css/ionicons.min.css}">
-    <link rel="stylesheet" th:href="@{/admin/dist/css/main.css}">
-    <link rel="stylesheet" th:href="@{/admin/plugins/bootstrap/css/bootstrap.css}"/>
-    <link rel="stylesheet" th:href="@{/admin/plugins/sweetalert/sweetalert.css}"/>
-    <link rel="stylesheet" th:href="@{/admin/plugins/jqgrid-5.3.0/ui.jqgrid-bootstrap4.css}"/>
+    <link rel="stylesheet" th:href="@{/dist/css/ionicons.min.css}">
+    <link rel="stylesheet" th:href="@{/dist/css/main.css}">
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/plugins/sweetalert/sweetalert.css}"/>
+    <link rel="stylesheet" th:href="@{/plugins/jqgrid-5.3.0/ui.jqgrid-bootstrap4.css}"/>
     <!-- Theme style -->
-    <link rel="stylesheet" th:href="@{/admin/dist/css/adminlte.min.css}">
+    <link rel="stylesheet" th:href="@{/dist/css/adminlte.min.css}">
 </head>
 <!-- Navbar -->
 <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom" th:fragment="header-nav">
@@ -26,19 +26,14 @@
             <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a th:href="@{/admin/index}" class="nav-link">Dashboard</a>
+            <a th:href="@{/index}" class="nav-link">Dashboard</a>
         </li>
     </ul>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
-            <a class="nav-link" th:href="@{/}">
-                <i class="fa fa-paper-plane">&nbsp;&nbsp;博客首页</i>
-            </a>
-        </li>
-        <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="fa fa-user">&nbsp;&nbsp;作者</i>
+                <i class="fa fa-user">账户</i>
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <div class="dropdown-divider"></div>

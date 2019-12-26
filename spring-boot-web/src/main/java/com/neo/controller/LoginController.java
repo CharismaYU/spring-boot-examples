@@ -2,31 +2,20 @@ package com.neo.controller;
 
 import com.neo.Constants;
 import com.neo.annotation.SysLog;
-import com.neo.domain.ApiResponse;
 import com.neo.model.User;
 import com.neo.service.UserService;
 import com.neo.util.ShiroUtils;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.IncorrectCredentialsException;
-import org.apache.shiro.authc.LockedAccountException;
-import org.apache.shiro.authc.UnknownAccountException;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.crypto.hash.Sha256Hash;
-import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.Locale;
 
 /**
  * @author :  yuxuenan 2019年12月24日
@@ -58,7 +47,6 @@ public class LoginController {
      * 登录
      */
     @SysLog("登录")
-    @ResponseBody
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@RequestParam("userName") String userName,
                         @RequestParam("password") String password,

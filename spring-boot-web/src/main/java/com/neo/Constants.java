@@ -4,7 +4,6 @@ package com.neo;
  * @author :  yuxuenan 2019年12月24日
  */
 public interface Constants {
-    String FILE_UPLOAD_DIC = "/opt/deploy/upload/";//上传文件的默认url前缀，根据部署设置自行修改
 
     /**
      * 当前登录用户
@@ -21,6 +20,11 @@ public interface Constants {
 
     /**验证码的生成文本集合 */
     String KAPTCHA_TEXT = "abcde2345678fghkynmpwx";
+
+    /**
+     * 上传文件的默认url前缀，根据部署设置自行修改
+     */
+    String FILE_UPLOAD_DIC = "/opt/deploy/upload/";
 
     /**
      * 登录
