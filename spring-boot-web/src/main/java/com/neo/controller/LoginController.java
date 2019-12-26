@@ -72,9 +72,11 @@ public class LoginController {
     /**
      * 退出
      */
-    @RequestMapping(value = "logout", method = RequestMethod.GET)
-    public String logout() {
-        ShiroUtils.logout();
-        return "redirect:/";
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        request.getSession().removeAttribute(Constants.CURRENT_USER_ID);
+        request.getSession().removeAttribute(Constants.CURRENT_USER);
+        request.getSession().removeAttribute("errorMsg");
+        return "login";
     }
 }
