@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<header th:replace="header::header-fragment"></header>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+    <!-- 引入页面头header-fragment -->
+    <div th:replace="header::header-nav"></div>
+    <!-- 引入工具栏sidebar-fragment -->
+    <div th:replace="sidebar::sidebar-fragment(${path})"></div>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+            </div>
+        </div>
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-primary card-outline">
+                            <div class="card-header">
+                                <h3 class="card-title">学习用户登录</h3>
+                            </div> <!-- /.card-body -->
+                            <div class="card-body">
+                                <form role="form" id="studyUserForm">
+                                    <div class="form-group col-sm-8">
+                                        <div class="alert alert-danger updatePassword-info" id="saveButton-info" style="display: none;"></div>
+                                    </div>
+                                    <!-- input states -->
+                                    <div class="form-group">
+                                        <label>名称</label>
+                                        <input type="text" class="form-control" id="loginUserName"
+                                               name="username"
+                                               placeholder="请输入登陆名称" required="true" th:value="${username}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label"><i class="fa fa-key"></i> 密码</label>
+                                        <input type="password" class="form-control" id="password" name="password"
+                                               placeholder="请输入密码" required="true">
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="button" id="saveButton" onsubmit="return false;"
+                                                class="btn btn-danger float-right">确认登录
+                                        </button>
+                                    </div>
+                                </form>
+                            </div><!-- /.card-body -->
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- 引入页脚footer-fragment -->
+    <div th:replace="footer::footer-fragment"></div>
+</div>
+<!-- jQuery -->
+<script th:src="@{/plugins/jquery/jquery.min.js}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script th:src="@{/plugins/jQueryUI/jquery-ui.min.js}"></script>
+<!-- Bootstrap 4 -->
+<script th:src="@{/plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<!-- AdminLTE App -->
+<script th:src="@{/dist/js/adminlte.min.js}"></script>
+<!-- public.js -->
+<script th:src="@{/dist/js/public.js}"></script>
+<!-- profile -->
+<script th:src="@{/dist/js/study/user.js}"></script>
+</body>
+</html>

@@ -24,9 +24,23 @@
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
+                <li class="nav-header">学习账户管理</li>
+                <li class="nav-item">
+                    <a th:href="@{/study}"
+                       th:class="${path}=='/'?'nav-link active':'nav-link'">
+                        <i class="fa fa-user-secret nav-icon"></i>
+                        <p>学习平台登录</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/study/logout}" class="nav-link">
+                        <i class="fa fa-sign-out nav-icon"></i>
+                        <p>安全退出</p>
+                    </a>
+                </li>
                 <li class="nav-header">管理模块</li>
                 <li class="nav-item">
-                    <a th:href="@{/blogs}" th:class="${path}=='blogs'?'nav-link active':'nav-link'">
+                    <a th:href="@{/course}" th:class="${path}=='blogs'?'nav-link active':'nav-link'">
                         <i class="fa fa-list-alt nav-icon" aria-hidden="true"></i>
                         <p>
                             课程管理
@@ -39,20 +53,6 @@
                         <p>
                            课程学习
                         </p>
-                    </a>
-                </li>
-                <li class="nav-header">系统管理</li>
-                <li class="nav-item">
-                    <a th:href="@{/profile}"
-                       th:class="${path}=='profile'?'nav-link active':'nav-link'">
-                        <i class="fa fa-user-secret nav-icon"></i>
-                        <p>修改密码</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a th:href="@{/logout}" class="nav-link">
-                        <i class="fa fa-sign-out nav-icon"></i>
-                        <p>安全退出</p>
                     </a>
                 </li>
             </ul>
